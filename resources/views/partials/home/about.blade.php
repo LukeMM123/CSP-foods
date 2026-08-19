@@ -29,7 +29,7 @@
 
     {{-- Full-screen background image --}}
     <img
-        src="{{ asset('images/home/about.jpg') }}"
+        src="{{ asset('images/home/about/about-main.jpg') }}"
         alt="CSP Food Services"
         class="absolute inset-0 h-full w-full object-cover"
     >
