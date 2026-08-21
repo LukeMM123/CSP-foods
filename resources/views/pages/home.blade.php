@@ -5,6 +5,8 @@
 >
 
     @include('partials.home.hero')
+    @include('partials.home.service-options')
+    @include('partials.home.trusted-by')
     @include('partials.home.products')
     @include('partials.home.about')
     @include('partials.home.commitment')

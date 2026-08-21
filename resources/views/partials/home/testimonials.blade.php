@@ -1,7 +1,5 @@
 <section
     x-data="{
-        paused: false,
-        animation: null,
         headingVisible: false,
         cardsVisible: false,
 
@@ -18,39 +16,14 @@
                         observer.disconnect();
                     }
                 },
-                {
-                    threshold: 0.15
-                }
+                { threshold: 0.15 }
             );
 
             observer.observe(this.$el);
-
-            this.startScroll();
-        },
-
-        startScroll() {
-            const track = this.$refs.track;
-
-            const scroll = () => {
-                if (!this.paused) {
-                    track.scrollLeft += 0.45;
-
-                    if (track.scrollLeft >= track.scrollWidth / 2) {
-                        track.scrollLeft = 0;
-                    }
-                }
-
-                this.animation = requestAnimationFrame(scroll);
-            };
-
-            scroll();
         }
     }"
-    @mouseenter="paused = true"
-    @mouseleave="paused = false"
     class="overflow-hidden bg-[#f3f3f1] py-20 sm:py-24 lg:py-28"
 >
-
     @php
         $testimonials = [
             [
@@ -60,7 +33,6 @@
                 'name' => 'Hans Louis',
                 'role' => 'Executive Head Chef',
             ],
-
             [
                 'logo' => 'london-clinic.png',
                 'company' => 'The London Clinic',
@@ -68,7 +40,6 @@
                 'name' => 'Paul O’Brien',
                 'role' => 'Executive Chef',
             ],
-
             [
                 'logo' => 'foodo-market.png',
                 'company' => 'Foodomarket',
@@ -76,7 +47,6 @@
                 'name' => 'Mohamed Ali Wali',
                 'role' => 'Vendor Manager',
             ],
-
             [
                 'logo' => 'runnymead.png',
                 'company' => 'Runnymead Hotel on Thames',
@@ -84,7 +54,6 @@
                 'name' => 'David Coutts',
                 'role' => 'Executive Chef',
             ],
-
             [
                 'logo' => 'ugo-foods.png',
                 'company' => 'Ugo Foods',
@@ -92,7 +61,6 @@
                 'name' => 'Lee Moss',
                 'role' => 'Purchasing & Logistics Director',
             ],
-
             [
                 'logo' => 'drake-morgan.png',
                 'company' => 'Drake & Morgan',
@@ -100,7 +68,6 @@
                 'name' => 'Rob Mitchell',
                 'role' => 'Executive Chef',
             ],
-
             [
                 'logo' => 'landmark.png',
                 'company' => 'The Landmark London',
@@ -111,104 +78,127 @@
         ];
     @endphp
 
-
-    {{-- Heading --}}
     <div class="mx-auto max-w-[1500px] px-6 lg:px-10">
-
         <div
             class="max-w-5xl transition-all duration-1000 ease-out"
-            :class="headingVisible
-                ? 'translate-y-0 opacity-100'
-                : 'translate-y-10 opacity-0'"
+            :class="headingVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'"
         >
-
-            <p
-                class="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500"
-            >
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-500">
                 Testimonials
             </p>
 
-            <h2
-                class="mt-5 text-4xl font-medium leading-[1.05] tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl"
-            >
+            <h2 class="mt-5 text-4xl font-medium leading-[1.05] tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
                 Don’t take our word for it.<br>
                 Hear it from our customers.
             </h2>
-
         </div>
-
     </div>
 
-
-    {{-- Scrolling testimonials --}}
     <div
-        class="transition-all duration-1000 ease-out"
-        :class="cardsVisible
-            ? 'translate-y-0 opacity-100'
-            : 'translate-y-12 opacity-0'"
+        class="mt-14 transition-all duration-1000 ease-out sm:mt-16"
+        :class="cardsVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
     >
+        <div class="testimonial-marquee-wrapper relative overflow-hidden">
+            <div class="pointer-events-none absolute inset-y-0 left-0 z-20 w-8 bg-gradient-to-r from-[#f3f3f1] to-transparent sm:w-16 lg:w-24"></div>
+            <div class="pointer-events-none absolute inset-y-0 right-0 z-20 w-8 bg-gradient-to-l from-[#f3f3f1] to-transparent sm:w-16 lg:w-24"></div>
 
-        <div
-            x-ref="track"
-            class="mt-14 flex gap-5 overflow-x-hidden px-5 sm:mt-16 sm:px-6"
-        >
-
-            {{-- Render twice for seamless looping --}}
-            @foreach (array_merge($testimonials, $testimonials) as $index => $testimonial)
-
-                <article
-                    class="flex h-[520px] w-[320px] shrink-0 flex-col rounded-[24px] bg-white p-7
-                           sm:h-[540px] sm:w-[350px] sm:p-8
-                           lg:w-[365px]"
-                >
-
-                    {{-- Company logo --}}
-                    <div class="flex h-16 items-start justify-start">
-
-                        <img
-                            src="{{ asset('images/home/testimonials/logos/' . $testimonial['logo']) }}"
-                            alt="{{ $testimonial['company'] }} logo"
-                            class="max-h-14 max-w-[130px] object-contain object-left"
+            <div class="testimonial-marquee flex w-max">
+                <div class="flex shrink-0 gap-5 pr-5">
+                    @foreach ($testimonials as $testimonial)
+                        <article
+                            class="group flex h-[520px] w-[320px] shrink-0 flex-col rounded-[24px] bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/[0.05] sm:h-[540px] sm:w-[350px] sm:p-8 lg:w-[365px]"
                         >
+                            <div class="flex h-16 items-start justify-start">
+                                <img
+                                    src="{{ asset('images/home/testimonials/logos/' . $testimonial['logo']) }}"
+                                    alt="{{ $testimonial['company'] }} logo"
+                                    class="max-h-14 max-w-[130px] object-contain object-left"
+                                >
+                            </div>
 
-                    </div>
+                            <blockquote class="mt-7 overflow-hidden text-[15px] leading-[1.6] tracking-tight text-neutral-900 sm:text-base">
+                                “{{ $testimonial['quote'] }}”
+                            </blockquote>
 
+                            <div class="mt-auto pt-8">
+                                <p class="text-xl font-medium tracking-tight text-neutral-900">
+                                    {{ $testimonial['name'] }}
+                                </p>
 
-                    {{-- Testimonial --}}
-                    <blockquote
-                        class="mt-7 overflow-hidden text-[15px] leading-[1.6] tracking-tight text-neutral-900 sm:text-base"
-                    >
-                        “{{ $testimonial['quote'] }}”
-                    </blockquote>
+                                <p class="mt-2 text-sm leading-5 text-neutral-400">
+                                    {{ $testimonial['role'] }}
+                                </p>
 
+                                <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-400">
+                                    {{ $testimonial['company'] }}
+                                </p>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
 
-                    {{-- Client --}}
-                    <div class="mt-auto pt-8">
-
-                        <p
-                            class="text-xl font-medium tracking-tight text-neutral-900"
+                <div class="flex shrink-0 gap-5 pr-5" aria-hidden="true">
+                    @foreach ($testimonials as $testimonial)
+                        <article
+                            class="group flex h-[520px] w-[320px] shrink-0 flex-col rounded-[24px] bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/[0.05] sm:h-[540px] sm:w-[350px] sm:p-8 lg:w-[365px]"
                         >
-                            {{ $testimonial['name'] }}
-                        </p>
+                            <div class="flex h-16 items-start justify-start">
+                                <img
+                                    src="{{ asset('images/home/testimonials/logos/' . $testimonial['logo']) }}"
+                                    alt=""
+                                    class="max-h-14 max-w-[130px] object-contain object-left"
+                                >
+                            </div>
 
-                        <p class="mt-2 text-sm leading-5 text-neutral-400">
-                            {{ $testimonial['role'] }}
-                        </p>
+                            <blockquote class="mt-7 overflow-hidden text-[15px] leading-[1.6] tracking-tight text-neutral-900 sm:text-base">
+                                “{{ $testimonial['quote'] }}”
+                            </blockquote>
 
-                        <p
-                            class="mt-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-400"
-                        >
-                            {{ $testimonial['company'] }}
-                        </p>
+                            <div class="mt-auto pt-8">
+                                <p class="text-xl font-medium tracking-tight text-neutral-900">
+                                    {{ $testimonial['name'] }}
+                                </p>
 
-                    </div>
+                                <p class="mt-2 text-sm leading-5 text-neutral-400">
+                                    {{ $testimonial['role'] }}
+                                </p>
 
-                </article>
-
-            @endforeach
-
+                                <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-400">
+                                    {{ $testimonial['company'] }}
+                                </p>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
         </div>
-
     </div>
 
+    <style>
+        @keyframes csp-testimonial-marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .testimonial-marquee {
+            animation: csp-testimonial-marquee 55s linear infinite;
+            will-change: transform;
+        }
+
+        .testimonial-marquee-wrapper:hover .testimonial-marquee {
+            animation-play-state: paused;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .testimonial-marquee {
+                animation: none;
+                transform: none;
+            }
+        }
+    </style>
 </section>
