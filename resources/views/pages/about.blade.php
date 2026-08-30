@@ -4,7 +4,7 @@
 >
 
     {{-- Hero --}}
-    <section class="relative overflow-hidden bg-[#2263AE] text-white">
+    <section class="relative overflow-hidden bg-[#2263AE] text-white bg-gradient-to-r from-[#071827] via-[#071827]/90 to-[#071827]/50">
 
         <div class="mx-auto max-w-7xl px-6 pb-24 pt-40 lg:px-10 lg:pb-32 lg:pt-48">
 
@@ -251,7 +251,7 @@
                 <div class="relative min-h-[560px] overflow-hidden">
 
                     <img
-                        src="{{ asset('images/about/commitment.jpg') }}"
+                        src="{{ asset('images/home/about/farm.jpg') }}"
                         alt="Responsible sourcing"
                         class="absolute inset-0 h-full w-full object-cover"
                     >
