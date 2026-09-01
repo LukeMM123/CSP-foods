@@ -56,8 +56,9 @@
                 ? 'translate-y-0 opacity-100'
                 : 'translate-y-10 opacity-0'"
         >
+
             <a
-                href="#fish"
+                href="#seasonal-produce"
                 class="group relative flex min-h-[460px] items-end overflow-hidden rounded-[16px] text-white sm:min-h-[540px] lg:min-h-[620px]"
             >
                 <img
@@ -92,8 +93,9 @@
                 </div>
             </a>
 
+
             <a
-                href="#game"
+                href="#seasonal-produce"
                 class="group relative flex min-h-[460px] items-end overflow-hidden rounded-[16px] text-white sm:min-h-[540px] lg:min-h-[620px]"
             >
                 <img
@@ -128,8 +130,11 @@
                 </div>
             </a>
 
+
             <a
-                href="#poultry"
+                href="https://cspfoodtoyourhome.company.site/"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="group relative flex min-h-[460px] items-end overflow-hidden rounded-[16px] text-white sm:min-h-[540px] lg:min-h-[620px]"
             >
                 <img
@@ -164,8 +169,11 @@
                 </div>
             </a>
 
+
             <a
-                href="#charcuterie"
+                href="https://cspfoodtoyourhome.company.site/"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="group relative flex min-h-[460px] items-end overflow-hidden rounded-[16px] text-white sm:min-h-[540px] lg:min-h-[620px]"
             >
                 <img
@@ -198,6 +206,7 @@
                     </span>
                 </div>
             </a>
+
         </div>
     </section>
 
