@@ -88,36 +88,34 @@
                         : 'translate-y-12 opacity-0'"
                     style="transition-delay: 200ms;"
                 >
-                    <div class="space-y-6 text-base leading-8 text-white/75 sm:text-lg">
-                        <p>
-                            Founded in 1967, CSP Food Services has grown from a
-                            family business into one of London’s trusted
-                            independent food wholesalers.
-                        </p>
+                <div class="space-y-6 text-base leading-8 text-white/75 sm:text-lg">
+                    <p>
+                        CSP Food Services was founded in 1967 by Luigi, who built the
+                        business around a commitment to quality produce, dependable service
+                        and strong relationships with his customers.
+                    </p>
 
-                        <p>
-                            While we’ve expanded our product range, customer base
-                            and delivery network over the decades, one thing has
-                            never changed — our commitment to building long-term
-                            relationships through exceptional service, reliability
-                            and quality.
-                        </p>
-                    </div>
+                    <p>
+                        As the business grew, it was passed down to his sons, Marco and
+                        Roberto, who continued to build on those same values while expanding
+                        CSP's product range, customer base and delivery network.
+                    </p>
+                </div>
 
-                    <div class="space-y-6 text-base leading-8 text-white/75 sm:text-lg">
-                        <p>
-                            Today, we continue to supply some of the UK’s most
-                            respected restaurants, hotels, private members’ clubs,
-                            caterers and professional organisations, with many
-                            customers having trusted us for years.
-                        </p>
+                <div class="space-y-6 text-base leading-8 text-white/75 sm:text-lg">
+                    <p>
+                        Today, CSP is entering its third generation, marking an exciting new
+                        chapter for the family business. With the next generation becoming
+                        increasingly involved, the company continues to evolve, expand and
+                        grow while remaining proudly independent and family-run.
+                    </p>
 
-                        <p>
-                            As a family-run business, we believe our reputation is
-                            built not only on the products we supply, but on the
-                            people behind them.
-                        </p>
-                    </div>
+                    <p>
+                        From its beginnings with Luigi to the business it is today, CSP's
+                        reputation has been built on generations of experience, personal
+                        service and long-standing relationships with customers and suppliers.
+                    </p>
+                </div>
                 </div>
 
                 <div
@@ -305,6 +303,7 @@
 
             </div>
 
+
             <div
                 class="mt-16 grid gap-px overflow-hidden bg-neutral-300 transition-all duration-1000 ease-out sm:grid-cols-2 lg:grid-cols-4"
                 :class="visible
@@ -337,12 +336,70 @@
 
             </div>
 
+
             <div
-                class="mt-16 border-t border-neutral-300 pt-10 transition-all duration-1000 ease-out"
+                class="mt-16 border-y border-neutral-300 py-12 transition-all duration-1000 ease-out sm:py-14"
                 :class="visible
                     ? 'translate-y-0 opacity-100'
                     : 'translate-y-10 opacity-0'"
                 style="transition-delay: 400ms;"
+            >
+                <div class="mb-10 text-center">
+
+                    <p class="text-xs font-bold uppercase tracking-[0.35em] text-[#2263AE]">
+                        Standards & responsibility
+                    </p>
+
+                    <h3 class="mt-4 text-2xl font-bold uppercase tracking-tight text-neutral-900 sm:text-3xl">
+                        Committed to responsible foodservice.
+                    </h3>
+
+                </div>
+
+                <div class="grid grid-cols-2 items-center gap-8 sm:gap-10 lg:grid-cols-4 lg:gap-12">
+
+                <div class="flex min-h-[180px] items-center justify-center">
+                    <img
+                        src="{{ asset('images/home/about/sustainability/logo-1.png') }}"
+                        alt="CSP sustainability accreditation"
+                        class="max-h-[150px] w-full max-w-[280px] object-contain"
+                    >
+                </div>
+
+                <div class="flex min-h-[180px] items-center justify-center">
+                    <img
+                        src="{{ asset('images/home/about/sustainability/logo-2.png') }}"
+                        alt="CSP sustainability accreditation"
+                        class="max-h-[150px] w-full max-w-[280px] object-contain"
+                    >
+                </div>
+
+                <div class="flex min-h-[180px] items-center justify-center">
+                    <img
+                        src="{{ asset('images/home/about/sustainability/logo-3.png') }}"
+                        alt="CSP sustainability accreditation"
+                        class="max-h-[150px] w-full max-w-[280px] object-contain"
+                    >
+                </div>
+
+                <div class="flex min-h-[180px] items-center justify-center">
+                    <img
+                        src="{{ asset('images/home/about/sustainability/logo-4.png') }}"
+                        alt="CSP sustainability accreditation"
+                        class="max-h-[150px] w-full max-w-[280px] object-contain"
+                    >
+                </div>
+
+            </div>
+            </div>
+
+
+            <div
+                class="mt-16 transition-all duration-1000 ease-out"
+                :class="visible
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-10 opacity-0'"
+                style="transition-delay: 500ms;"
             >
                 <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
 
