@@ -211,7 +211,10 @@
                     'Specialist & Seasonal Products',
                 ] as $item)
 
-                    <div class="group border-b border-r border-neutral-200 p-7 transition duration-300 hover:bg-[#071827] sm:p-8 lg:p-10">
+                    <a
+                        href="{{ route('products') }}"
+                        class="group border-b border-r border-neutral-200 p-7 transition duration-300 hover:bg-[#071827] sm:p-8 lg:p-10"
+                    >
                         <div class="flex items-center justify-between gap-5">
 
                             <span class="text-lg font-bold uppercase tracking-tight text-neutral-900 transition duration-300 group-hover:text-white">
@@ -223,7 +226,7 @@
                             </span>
 
                         </div>
-                    </div>
+                    </a>
 
                 @endforeach
 
