@@ -3,7 +3,8 @@
     description="Contact CSP Food Services for wholesale food supply, product enquiries and general questions."
 >
 
-    <section class="bg-[#2263AE] px-6 pb-20 pt-40 text-white sm:px-10 lg:px-16 lg:pb-28 lg:pt-48 bg-gradient-to-r from-[#071827] via-[#071827]/90 to-[#071827]/50">
+    {{-- HERO --}}
+    <section class="bg-gradient-to-r from-[#071827] via-[#071827]/90 to-[#071827]/50 px-6 pb-20 pt-40 text-white sm:px-10 lg:px-16 lg:pb-28 lg:pt-48">
         <div class="mx-auto max-w-7xl">
 
             <p class="text-xs font-bold uppercase tracking-[0.4em] text-white/50">
@@ -23,6 +24,7 @@
     </section>
 
 
+    {{-- CONTACT --}}
     <section class="bg-[#f3f3f1] py-20 sm:py-24 lg:py-28">
 
         <div class="mx-auto max-w-7xl px-6 lg:px-10">
@@ -57,7 +59,7 @@
                                 href="tel:02073538241"
                                 class="mt-2 block text-xl font-medium text-neutral-900 transition hover:text-[#2263AE]"
                             >
-                                020 7353 8241/2
+                                020 7353 8241
                             </a>
                         </div>
 
@@ -93,8 +95,34 @@
                 {{-- Contact form --}}
                 <div class="lg:col-span-8">
 
+                    {{-- Success message --}}
+                    @if (session('success'))
+                        <div class="mb-6 border border-green-200 bg-green-50 px-6 py-5 text-sm font-medium text-green-800">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+
+                    {{-- Validation errors --}}
+                    @if ($errors->any())
+                        <div class="mb-6 border border-red-200 bg-red-50 px-6 py-5 text-sm text-red-800">
+
+                            <p class="font-bold">
+                                Please check the form and try again.
+                            </p>
+
+                            <ul class="mt-3 list-disc space-y-1 pl-5">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+
+                        </div>
+                    @endif
+
+
                     <form
-                        action="#"
+                        action="{{ route('contact.submit') }}"
                         method="POST"
                         class="rounded-[24px] bg-white p-7 shadow-xl shadow-black/[0.05] sm:p-10 lg:p-12"
                     >
@@ -102,6 +130,7 @@
 
                         <div class="grid gap-6 sm:grid-cols-2">
 
+                            {{-- First name --}}
                             <div>
                                 <label
                                     for="first_name"
@@ -114,11 +143,15 @@
                                     type="text"
                                     id="first_name"
                                     name="first_name"
+                                    value="{{ old('first_name') }}"
                                     required
+                                    autocomplete="given-name"
                                     class="mt-3 w-full border-0 border-b border-neutral-300 bg-transparent px-0 py-3 text-base text-neutral-900 outline-none transition focus:border-[#2263AE] focus:ring-0"
                                 >
                             </div>
 
+
+                            {{-- Last name --}}
                             <div>
                                 <label
                                     for="last_name"
@@ -131,11 +164,15 @@
                                     type="text"
                                     id="last_name"
                                     name="last_name"
+                                    value="{{ old('last_name') }}"
                                     required
+                                    autocomplete="family-name"
                                     class="mt-3 w-full border-0 border-b border-neutral-300 bg-transparent px-0 py-3 text-base text-neutral-900 outline-none transition focus:border-[#2263AE] focus:ring-0"
                                 >
                             </div>
 
+
+                            {{-- Telephone --}}
                             <div>
                                 <label
                                     for="telephone"
@@ -148,11 +185,15 @@
                                     type="tel"
                                     id="telephone"
                                     name="telephone"
+                                    value="{{ old('telephone') }}"
                                     required
+                                    autocomplete="tel"
                                     class="mt-3 w-full border-0 border-b border-neutral-300 bg-transparent px-0 py-3 text-base text-neutral-900 outline-none transition focus:border-[#2263AE] focus:ring-0"
                                 >
                             </div>
 
+
+                            {{-- Email --}}
                             <div>
                                 <label
                                     for="email"
@@ -165,29 +206,33 @@
                                     type="email"
                                     id="email"
                                     name="email"
+                                    value="{{ old('email') }}"
                                     required
+                                    autocomplete="email"
                                     class="mt-3 w-full border-0 border-b border-neutral-300 bg-transparent px-0 py-3 text-base text-neutral-900 outline-none transition focus:border-[#2263AE] focus:ring-0"
                                 >
                             </div>
 
                         </div>
 
+
+                        {{-- Message --}}
                         <div class="mt-8">
 
                             <label
-                                for="message"
+                                for="comments"
                                 class="text-xs font-bold uppercase tracking-[0.18em] text-neutral-500"
                             >
                                 Comments / Questions
                             </label>
 
                             <textarea
-                                id="message"
-                                name="message"
+                                id="comments"
+                                name="comments"
                                 rows="6"
                                 required
                                 class="mt-3 w-full resize-none rounded-[14px] border border-neutral-300 bg-[#fafafa] px-4 py-4 text-base text-neutral-900 outline-none transition focus:border-[#2263AE] focus:ring-0"
-                            ></textarea>
+                            >{{ old('comments') }}</textarea>
 
                         </div>
 
@@ -208,6 +253,7 @@
                                     name="consent"
                                     value="1"
                                     required
+                                    @checked(old('consent'))
                                     class="mt-1 h-4 w-4 rounded border-neutral-300 text-[#2263AE] focus:ring-[#2263AE]"
                                 >
 
@@ -220,11 +266,27 @@
                         </div>
 
 
+                        {{-- Submit --}}
                         <button
                             type="submit"
-                            class="mt-9 inline-flex items-center justify-center bg-[#071827] px-8 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white transition duration-300 hover:bg-[#2263AE]"
+                            class="mt-9 inline-flex items-center justify-center gap-3 bg-[#071827] px-8 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white transition duration-300 hover:bg-[#2263AE]"
                         >
                             Send enquiry
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                class="h-5 w-5"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M5 12h14m-6-6 6 6-6 6"
+                                />
+                            </svg>
                         </button>
 
                     </form>

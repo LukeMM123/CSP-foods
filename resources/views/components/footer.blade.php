@@ -153,7 +153,9 @@
                     <div class="flex flex-col gap-3">
 
                         <a
-                            href="#"
+                            href="{{ asset('files/cspcreditform.pdf') }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             class="text-sm text-white/70 transition hover:text-white"
                         >
                             Credit Application Form
