@@ -17,7 +17,7 @@
             href="{{ route('home') }}"
             class="relative z-50 text-xl font-bold tracking-[0.18em] text-white"
         >
-            CSP LIMITED
+            CSP Food Services
         </a>
 
         <nav class="hidden items-center gap-10 lg:flex">

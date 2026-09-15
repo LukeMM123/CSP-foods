@@ -80,7 +80,7 @@
                         </svg>
 
                         <span class="text-lg">
-                            020 7353 8241/2
+                            020 7353 8241
                         </span>
                     </a>
 
@@ -175,7 +175,7 @@
                 <div class="mt-9 flex items-center gap-3">
 
                     <a
-                        href="#"
+                        href="https://www.linkedin.com/company/csp-food-services-limited/home/"
                         aria-label="LinkedIn"
                         class="flex h-11 w-11 items-center justify-center rounded-full border border-white/40
                                text-sm font-bold transition hover:bg-white hover:text-[#2263AE]"
@@ -184,7 +184,7 @@
                     </a>
 
                     <a
-                        href="#"
+                        href="https://www.instagram.com/csp.at.home/"
                         aria-label="Instagram"
                         class="flex h-11 w-11 items-center justify-center rounded-full border border-white/40
                                text-sm font-bold transition hover:bg-white hover:text-[#2263AE]"
@@ -193,7 +193,7 @@
                     </a>
 
                     <a
-                        href="#"
+                        href="https://www.facebook.com/csp.at.home/"
                         aria-label="Facebook"
                         class="flex h-11 w-11 items-center justify-center rounded-full border border-white/40
                                text-sm font-bold transition hover:bg-white hover:text-[#2263AE]"

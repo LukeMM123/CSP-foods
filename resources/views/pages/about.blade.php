@@ -279,7 +279,7 @@
                     <div class="mt-8 space-y-6 text-base leading-8 text-neutral-600 sm:text-lg">
                         <p>
                             At CSP, sustainability isn’t treated as a separate
-                            initiative — it’s part of how we do business.
+                            initiative - it’s part of how we do business.
                         </p>
 
                         <p>
@@ -308,7 +308,7 @@
 
 
             <div
-                class="mt-16 grid gap-px overflow-hidden bg-neutral-300 transition-all duration-1000 ease-out sm:grid-cols-2 lg:grid-cols-4"
+                class="mt-16 grid gap-px overflow-hidden bg-neutral-300 transition-all duration-1000 ease-out sm:grid-cols-2 lg:grid-cols-3"
                 :class="visible
                     ? 'translate-y-0 opacity-100'
                     : 'translate-y-10 opacity-0'"
@@ -321,8 +321,7 @@
                     'Animal Welfare Policy',
                     'Sustainable Procurement',
                     'Carbon reduction initiatives',
-                    'Waste reduction',
-                    'Responsible supply chains',
+                    'Waste reduction'
                 ] as $commitment)
 
                     <div class="bg-white p-7 sm:p-8">
@@ -502,7 +501,7 @@
 
                             <div class="group relative h-[360px] w-[300px] shrink-0 overflow-hidden sm:h-[420px] sm:w-[360px] lg:h-[480px] lg:w-[420px]">
                                 <img
-                                    src="/images/home/about/team/drivers.jpg"
+                                    src="/images/home/about/team/delivery.png"
                                     alt="Delivery team"
                                     class="absolute inset-0 h-full w-full object-cover"
                                 >
@@ -518,7 +517,7 @@
 
                             <div class="group relative h-[360px] w-[300px] shrink-0 overflow-hidden sm:h-[420px] sm:w-[360px] lg:h-[480px] lg:w-[420px]">
                                 <img
-                                    src="/images/home/about/team/vans.jpg"
+                                    src="/images/home/about/team/vans.png"
                                     alt="Our fleet"
                                     class="absolute inset-0 h-full w-full object-cover"
                                 >
@@ -534,7 +533,7 @@
 
                             <div class="group relative h-[360px] w-[300px] shrink-0 overflow-hidden sm:h-[420px] sm:w-[360px] lg:h-[480px] lg:w-[420px]">
                                 <img
-                                    src="/images/home/about/team/poultry-team.jpg"
+                                    src="/images/home/about/team/poultry.png"
                                     alt="Poultry team"
                                     class="absolute inset-0 h-full w-full object-cover"
                                 >

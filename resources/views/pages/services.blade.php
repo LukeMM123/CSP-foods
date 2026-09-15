@@ -429,6 +429,7 @@
 
             <div class="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24">
 
+                {{-- Left --}}
                 <div>
                     <p class="text-xs font-bold uppercase tracking-[0.35em] text-[#2263AE]">
                         Delivery coverage
@@ -444,20 +445,19 @@
                     </p>
                 </div>
 
-                <div class="grid border-l border-t border-neutral-300 sm:grid-cols-2">
+
+                {{-- Right --}}
+                <div class="grid self-start border-l border-t border-neutral-300 sm:grid-cols-2 mt-10">
 
                     @foreach ([
                         'Central London',
                         'Greater London',
                         'Surrey',
-                        'Kent',
-                        'Essex',
-                        'Hertfordshire',
-                        'Berkshire',
                         'Sussex',
                     ] as $area)
 
-                        <div class="border-b border-r border-neutral-300 bg-white p-6 sm:p-7">
+                        <div class="border-b border-r border-neutral-300 bg-white px-6 py-6 sm:px-7 sm:py-7">
+
                             <div class="flex items-center gap-4">
 
                                 <svg
@@ -473,7 +473,12 @@
                                         stroke-linejoin="round"
                                         d="M12 21s6-5.5 6-11a6 6 0 1 0-12 0c0 5.5 6 11 6 11Z"
                                     />
-                                    <circle cx="12" cy="10" r="2"></circle>
+
+                                    <circle
+                                        cx="12"
+                                        cy="10"
+                                        r="2"
+                                    />
                                 </svg>
 
                                 <span class="font-bold uppercase tracking-tight text-neutral-900">
@@ -481,6 +486,7 @@
                                 </span>
 
                             </div>
+
                         </div>
 
                     @endforeach
@@ -488,6 +494,7 @@
                 </div>
 
             </div>
+
 
             <div class="mt-8 border-t border-neutral-300 pt-6">
                 <p class="text-sm leading-7 text-neutral-500">
