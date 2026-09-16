@@ -547,10 +547,10 @@
                                 </div>
                             </div>
 
-                            {{--
+                            
                             <div class="group relative h-[360px] w-[300px] shrink-0 overflow-hidden sm:h-[420px] sm:w-[360px] lg:h-[480px] lg:w-[420px]">
                                 <img
-                                    src="/images/home/about/team/office.jpg"
+                                    src="/images/home/about/team/office.png"
                                     alt="Office team"
                                     class="absolute inset-0 h-full w-full object-cover"
                                 >
@@ -563,7 +563,7 @@
                                     </p>
                                 </div>
                             </div>
-                            --}}
+                            
 
                         </div>
 

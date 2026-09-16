@@ -62,7 +62,7 @@
             <h1
                 class="text-5xl font-bold uppercase leading-none tracking-tight text-white sm:text-7xl lg:text-[7rem]"
             >
-                CSP Limited
+                CSP Food Services
             </h1>
 
             <div class="mx-auto mt-8 h-px w-16 bg-white/70"></div>
