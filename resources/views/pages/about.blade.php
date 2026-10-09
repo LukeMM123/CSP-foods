@@ -358,7 +358,7 @@
 
                 </div>
 
-                <div class="grid grid-cols-2 items-center gap-8 sm:gap-10 lg:grid-cols-4 lg:gap-12">
+                <div class="grid grid-cols-2 items-center gap-8 sm:gap-10 lg:grid-cols-3 lg:gap-12">
 
                 <div class="flex min-h-[180px] items-center justify-center">
                     <img
@@ -368,13 +368,6 @@
                     >
                 </div>
 
-                <div class="flex min-h-[180px] items-center justify-center">
-                    <img
-                        src="{{ asset('images/home/about/sustainability/logo-2.png') }}"
-                        alt="CSP sustainability accreditation"
-                        class="max-h-[150px] w-full max-w-[280px] object-contain"
-                    >
-                </div>
 
                 <div class="flex min-h-[180px] items-center justify-center">
                     <img
